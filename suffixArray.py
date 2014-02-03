@@ -2,10 +2,10 @@
 # described by Nong, Zhang and Chan (2009)
 # It is not tested on any large datasets, but *should* behave similarly
 
-def suffixArray():                          #Where n is the length of the input, a is the size of its alphabet
+#Input string S is an input string terminated by a $ character. This can be generated with readText.py
+def suffixArray(S):                         #Where n is the length of the input, a is the size of its alphabet
     from bisect import insort
     from copy import copy
-    S = readText()                          #Read input file into a string: O(n) time and space
     t = [True]*len(S)                       #Type array, True is S-type, false is L-type: O(1) time, O(n) space eventually
     LMS = []                                #Keeps track of LMS suffix positions O(1) time, O(n) space eventually
     SA = [-1]*len(S)                        #The list which will become the suffix array, O(n) time and space at most.
